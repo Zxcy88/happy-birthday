@@ -331,7 +331,7 @@ export const birthdayContent: BirthdayContent = {
   },
   voice: {
     kicker: "One last thing",
-    title: "Everything else, I'd rather say out loud.",
+    title: "Actually, I'd rather say out loud.",
     body: "There's a recording waiting, when you're ready to hear it.",
     video: {
       src: "/media/final/final-message.mp4",
