@@ -133,7 +133,7 @@ export const birthdayContent: BirthdayContent = {
   herAge: "",
   myName: "",
   weddingDate: "2026-11-25",
-  weddingDateDisplay: "25.11.2026",
+  weddingDateDisplay: "25.11.2026 😉",
   gate: {
     enabled: true,
     passphrase: "25.11.2026",
@@ -209,7 +209,7 @@ export const birthdayContent: BirthdayContent = {
   },
   becoming: {
     kicker: "Then / now",
-    thesis: "Some things change. Some things become more unmistakably you.",
+    thesis: "Same smile. Just taller now.",
     thenLabel: "Then",
     nowLabel: "Now",
     thenPhoto: {
@@ -274,7 +274,7 @@ export const birthdayContent: BirthdayContent = {
     title: "Things I hope you never underestimate about yourself",
     qualities: [
       { n: "01", text: "Incase you ever forget, you do make me happy, and I appreciate having you in my life." },
-      { n: "02", text: "You're such a nice person, I could say 'I love you' 100 times a day and it would never be enough." },
+      { n: "02", text: "Incase you ever doubt it, your emotions have never once been 'too much' for me. I love to reassure you that it's all good." },
       { n: "03", text: "Your presence in everyone's life is a gift, and I'm so grateful to have you in mine." },
       { n: "04", text: "I'm so proud of you for how you've grown, and I'm so proud of you for how you've handled everything life has thrown at you." },
     ],
@@ -345,7 +345,7 @@ export const birthdayContent: BirthdayContent = {
     signOff: "Happy birthday",
   },
   easter: {
-    note: "You found the quiet corner. There's nothing hidden here except this: I would do all of it again.",
+    note: "You found the quiet corner. There's nothing hidden here except this: I love you!!!",
     hidden: "25.11.2026 — not a countdown. Just a day I'm walking towards.",
   },
   audio: {
