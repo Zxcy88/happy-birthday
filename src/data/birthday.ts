@@ -135,8 +135,8 @@ export const birthdayContent: BirthdayContent = {
   weddingDate: "2026-11-25",
   weddingDateDisplay: "25.11.2026",
   gate: {
-    enabled: false,
-    passphrase: "",
+    enabled: true,
+    passphrase: "25.11.2026",
     prompt: "A word only you would know.",
     hint: "Leave gate.enabled false until you set a passphrase in birthday.ts.",
   },
