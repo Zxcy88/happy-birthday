@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #0a0908;
+  color: #f4eee3;
+}
+
+body {
+  overflow: hidden;
+}
+
+::selection {
+  background: rgba(212, 180, 131, 0.35);
+  color: #f4eee3;
+}
+
+*:focus-visible {
+  outline: 1px solid #d4b483;
+  outline-offset: 3px;
+}
+
+.grain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.safe-pad {
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+/* Small letterspaced label that opens each chapter. */
+.kicker {
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+@keyframes ken {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-1.5%, 1%, 0);
+  }
+}
+
+/* Stays at or below scale 1 so a contained photo never grows past its frame. */
+@keyframes drift {
+  from {
+    transform: scale(0.955);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    display: none;
+  }
+}
