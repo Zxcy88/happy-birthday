@@ -11,6 +11,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Read by asset() so media paths survive being served from a subfolder.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   ...(basePath
     ? {
         basePath,

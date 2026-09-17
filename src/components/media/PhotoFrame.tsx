@@ -1,5 +1,7 @@
 "use client";
 
+import { asset } from "@/lib/asset";
+
 /**
  * Fits a whole photograph inside its box. The subject is never cropped, and a
  * blurred copy fills the leftover space so tall portraits still feel full-bleed
@@ -20,18 +22,20 @@ export function PhotoFrame({
   drift?: boolean;
   eager?: boolean;
 }) {
+  const href = asset(src);
+
   return (
     <div className="relative h-full w-full overflow-hidden bg-ink">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={src}
+        src={href}
         alt=""
         aria-hidden
         className="absolute inset-0 h-full w-full scale-125 object-cover opacity-25 blur-2xl"
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={src}
+        src={href}
         alt={alt}
         loading={eager ? "eager" : "lazy"}
         decoding="async"

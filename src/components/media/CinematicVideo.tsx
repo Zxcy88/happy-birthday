@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isUnset, type VideoSegment } from "@/data/birthday";
+import { asset } from "@/lib/asset";
 
 /**
  * A call recording framed as a window. An optional soundtrack can replace its
@@ -206,7 +207,7 @@ export function CinematicVideo({
         }`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={poster} alt="" className="h-full w-full object-cover opacity-50" />
+        <img src={asset(poster)} alt="" className="h-full w-full object-cover opacity-50" />
         <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
           <p className="max-w-sm kicker text-ivory-dim">
             {fallbackLabel}
@@ -226,7 +227,7 @@ export function CinematicVideo({
           muted={isMontage}
           playsInline
           preload="metadata"
-          poster={isUnset(poster) ? undefined : poster}
+          poster={isUnset(poster) ? undefined : asset(poster)}
           onError={() => setFailed(true)}
           onLoadedMetadata={handleLoadedMetadata}
           onPlay={startMusic}
@@ -242,7 +243,7 @@ export function CinematicVideo({
           onEnded={stopMusic}
           onTimeUpdate={handleTimeUpdate}
         >
-          <source src={src} />
+          <source src={asset(src)} />
         </video>
         {caption ? <figcaption className="sr-only">{caption}</figcaption> : null}
       </figure>
@@ -282,7 +283,7 @@ export function CinematicVideo({
         <>
           <audio
             ref={audioRef}
-            src={soundtrackSrc}
+            src={asset(soundtrackSrc ?? "")}
             preload="metadata"
             onLoadedMetadata={() => {
               const audio = audioRef.current;

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { birthdayContent, isUnset } from "@/data/birthday";
 import { useExperience } from "@/components/experience/ExperienceProvider";
+import { asset } from "@/lib/asset";
 
 export function AudioHook() {
   const { audioMuted, toggleAudio } = useExperience();
@@ -24,7 +25,7 @@ export function AudioHook() {
 
   return (
     <>
-      <audio ref={ref} src={src} loop preload="none" />
+      <audio ref={ref} src={asset(src)} loop preload="none" />
       <button
         type="button"
         onClick={toggleAudio}
